@@ -1,0 +1,32 @@
+{
+  "executionFrameworkSpec": {
+    "name": "standalone",
+    "segmentGenerationJobRunnerClassName": "org.apache.pinot.plugin.ingestion.batch.standalone.SegmentGenerationJobRunner",
+    "segmentTarPushJobRunnerClassName": "org.apache.pinot.plugin.ingestion.batch.standalone.SegmentTarPushJobRunner",
+    "segmentUriPushJobRunnerClassName": "org.apache.pinot.plugin.ingestion.batch.standalone.SegmentUriPushJobRunner"
+  },
+  "jobType": "SegmentCreationAndTarPush",
+  "inputDirURI": "file:///path/to/your/data/directory",
+  "includeFileNamePattern": "glob:**/*.csv",
+  "outputDirURI": "file:///path/to/output/directory",
+  "overwriteOutput": true,
+  "pinotFSSpecs": [
+    {
+      "scheme": "file",
+      "className": "org.apache.pinot.spi.filesystem.LocalPinotFS"
+    }
+  ],
+  "tableSpec": {
+    "tableName": "call_analytics",
+    "schemaName": "call_analytics"
+  },
+  "pinotClusterSpecs": [
+    {
+      "controllerURI": "http://localhost:9000"
+    }
+  ],
+  "pushJobSpec": {
+    "pushAttempts": 2,
+    "pushRetryIntervalMillis": 1000
+  }
+}

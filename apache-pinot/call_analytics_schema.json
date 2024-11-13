@@ -1,0 +1,27 @@
+{
+  "schemaName": "call_analytics",
+  "dimensionFieldSpecs": [
+    { "name": "row_id", "dataType": "INT" },
+    { "name": "call_id", "dataType": "STRING" },
+    { "name": "agent_id", "dataType": "STRING" },
+    { "name": "department_id", "dataType": "INT" },
+    { "name": "company_id", "dataType": "INT" },
+    { "name": "call_status", "dataType": "STRING" },
+    { "name": "call_outcome", "dataType": "STRING" }
+  ],
+  "metricFieldSpecs": [{ "name": "duration", "dataType": "DOUBLE" }],
+  "dateTimeFieldSpecs": [
+    {
+      "name": "call_start_time",
+      "dataType": "TIMESTAMP",
+      "format": "1:MILLISECONDS:EPOCH",
+      "granularity": "1:MILLISECONDS"
+    },
+    {
+      "name": "call_end_time",
+      "dataType": "TIMESTAMP",
+      "format": "1:MILLISECONDS:EPOCH",
+      "granularity": "1:MILLISECONDS"
+    }
+  ]
+}
